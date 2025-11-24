@@ -26,7 +26,8 @@ const ConnectPluggy = () => {
 
   return (
     <div style={{ padding: 16 }}>
-      <h1>teste</h1>
+          <h2>Conectar ao Pluggy</h2>
+      <p>Bem-vindo! Aqui você iniciará o fluxo de conexão Pluggy.</p>
 
       <button onClick={handleOpen} disabled={status === "loading" || !!token}>
         {status === "loading" ? "Carregando..." : "Conectar minha conta"}

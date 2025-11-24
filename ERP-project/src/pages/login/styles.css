@@ -1,0 +1,188 @@
+
+.container-login h2 {
+  font-weight: bold;
+}
+.container-login p {
+  color: var(--color-gray1);
+}
+.img-igreja {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+.invalid-error-message {
+  color: red;
+}
+.bem-vindo {
+  color: var(--color-gray1);
+}
+.row {
+  background-color: var(--color-white);
+}
+.btn-logar {
+  margin-top: 20px;
+}
+
+.manter-conectado  {
+
+  color: var(--color-gray1)!important;
+}
+.checkbox-conectado:checked {
+  background-color: var(--color-blue) !important;
+  border-color: var(--color-blue) !important;
+}
+.checkbox-conectado {
+  appearance: none;
+  width: 18px!important;
+  height: 18px!important;
+  border: 2px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  margin-top: 17px;
+}
+.esqueceu-senha {
+  color: var(--color-coral);
+  text-decoration: none;
+  background: none;
+}
+
+.esqueceu-senha:hover {
+  color: var(--color-blue);
+
+}
+.checkbox-conectado:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 3px;
+  margin-top: -1px;
+}
+
+#password {
+  z-index: 999;
+}
+#olho {
+  border: none;
+  position: absolute;
+  margin-left: 290px;
+  background: none;
+  z-index: 1000;
+}
+
+#olho:hover {
+  background: none;
+  text-decoration: none;
+  color: rgb(129, 129, 129);
+}
+
+#login h2 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.input-login {
+  font-weight: 100;
+  width: 320px !important;
+  margin-right: 10vw;
+}
+.logo-templo{
+max-width: 300vw;
+}
+#loading-image {
+  margin-top: 20px;
+  width: 50px;
+  height: 55px;
+}
+.section-login{
+margin-top: 3vw;
+
+}
+
+@media (max-width: 767px) {
+  .container-login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 2.8vw;
+  }
+
+  .container-login h2 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+.btn-entrar-loogin{
+  margin-top: 30px;
+}
+  .container-login p {
+    font-size: 14px;
+    color: var(--color-gray1);
+  }
+
+  .form-control {
+    font-size: 14px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .btn-logar,
+  .button-primary {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .input-group {
+    position: relative;
+  }
+
+  #olho {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+    border: none;
+    background: none;
+    color: #888;
+  }
+
+  .checkbox-conectado {
+    margin-top: 4px;
+   
+    left: 24vw;
+    width: 18px;
+    height: 18px;
+ position: absolute;
+   
+  }
+
+  .manter-conect {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    justify-content: center;
+    margin: 20px 0 1px;
+    margin-left: -20px;
+   
+  }
+
+  .recuperar-senha {
+    font-size: 13px;
+    display: block;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .img-login {
+    display: none !important;
+  }
+}

@@ -1,42 +1,147 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+:root {
+
+  --color-coral: #ed7947;
+  --color-dimgray: #4c5d67;
+  --color-gray1: #8d8d8d;
+  --color-gray2: #e0e0e044;
+  --color-grayClaro:#d8d8d8;
+  --color-gray3: #4a4f52;
+  --color-blue: #0b1f34;
+  --color-white: #ffffff;
+  --color-red: #ff0000b2;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+.button-primary {
+  background-color: var(--color-coral);
+  width: 320px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 20px;
   text-align: center;
+  font-size: 14px;
+}
+.button-primary-blue {
+  background-color: var(--color-blue);
+  width: 320px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.button-primary-small {
+  border-radius: 5px;
+  height: 40px;
+  align-content: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  width: 190px;
+  font-size: 14px;
+  background-color: var(--color-coral);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-primary-large:hover {
+  background-color: #cc693e;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btn-deletar {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+  background-color: var(--color-red);
+}
+.btn-editar {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+  background-color: var(--color-blue);
+  margin-right: 20px;
+}
+.btn-cancelar {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+  background-color: var(--color-blue);
+}
+* {
+  font-family: "Manrope", sans-serif;
 }
 
-.card {
-  padding: 2em;
+html {
+  background-color: var(--color-white);
 }
 
-.read-the-docs {
-  color: #888;
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+.table> tbody > tr:nth-child(odd) > td,
+.table> tbody > tr:nth-child(odd) > th {
+  background-color: var(--color-white);
+  color: var(--color-gray3);
+}
+.table> tbody > tr:nth-child(even) > td,
+.table> tbody > tr:nth-child(even) > th {
+  color: var(--color-gray3);
+
+    background-color: var(--color-gray2);
+}
+td a {
+  text-decoration: none;
+  color: var(--color-gray1);
+}
+
+.table thead th:first-child {
+  border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+}
+
+.table thead th:last-child {
+  border-top-right-radius: 5px;
+     border-bottom-right-radius: 5px;
+}
+
+.table thead th {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.table td,
+.table th {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+label{
+  font-weight: bolder;
+  color: var(--color-gray3)
 }
