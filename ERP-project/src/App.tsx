@@ -5,6 +5,7 @@ import './App.css'
 import Login from './pages/login'
 import ConnectPluggy from './pages/Pluggy'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Transacoes from './pages/transaçoes'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/connect-pluggy" element={<ConnectPluggy />} />
+        <Route path="/transaçoes" element={<Transacoes />} />
       </Routes>
     </Router>
   )
