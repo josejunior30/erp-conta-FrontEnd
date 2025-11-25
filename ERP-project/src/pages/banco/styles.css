@@ -1,0 +1,29 @@
+.foto-banco {
+  width: 90px;
+}
+.span-tile {
+  display: "inline-block";
+  width: 18px;
+  height: 18px;
+  border: "1px solid rgba(0,0,0,.1)";
+  border-radius: 6;
+}
+.card-body a {
+  text-decoration: none;
+}
+.corpo-banco {
+  background-color: #f5f4fa;
+}
+
+.container-banco{
+    cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.container-banco:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+.container-banco:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
