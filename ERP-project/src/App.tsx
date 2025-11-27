@@ -6,13 +6,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TransacoesExibir from "./pages/transacoesExibir";
 import Banco from "./pages/banco";
 
+import Logout from "./util/Logout";
+import RequireAuth from "./pages/router/RequireAuth";
+import PublicOnlyRoute from "./pages/router/PublicOnlyRoute";
+
 function App() {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
+    const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,10 +30,20 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/connect-pluggy" element={<ConnectPluggy />} />
-        <Route path="/transaçoes" element={<Banco />} />
-        <Route path="/transacoes/:itemId" element={<TransacoesExibir />} />
+        <Route
+          path="/"
+          element={
+            <PublicOnlyRoute>
+              <Login />
+            </PublicOnlyRoute>
+          }
+        />
+        <Route path="/logout" element={<Logout />} />
+        <Route element={<RequireAuth />}>
+          <Route path="/connect-pluggy" element={<ConnectPluggy />} />
+          <Route path="/transacoes" element={<Banco />} />
+          <Route path="/transacoes/:accountId" element={<TransacoesExibir />} />
+        </Route>
       </Routes>
     </Router>
   );

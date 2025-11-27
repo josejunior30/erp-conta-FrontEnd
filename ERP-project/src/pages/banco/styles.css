@@ -1,29 +1,85 @@
-.foto-banco {
-  width: 90px;
+.deck {
+  --card-width: 360px;
+  --card-height: 210px;
+  --stack-overlap: -220px;
+  --spread-shift: 12px;
+  --hover-shift: 72px;
+  --scale-active: 1.04;
+  --radius: 16px;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: calc(var(--card-height) + 24px);
+  padding: 8px 8px 24px 8px;
+  overflow: hidden;
+  gap: 0;
 }
-.span-tile {
-  display: "inline-block";
-  width: 18px;
-  height: 18px;
-  border: "1px solid rgba(0,0,0,.1)";
-  border-radius: 6;
+.deck-card {
+  position: relative;
 }
-.card-body a {
+.deck-card-link {
+  position: absolute;
+  inset: 0;                
+  z-index: 5;              
+  border-radius: inherit;  
   text-decoration: none;
-}
-.corpo-banco {
-  background-color: #f5f4fa;
+  color: inherit;
+ background-color: rgba(32, 87, 117, 0.144)!important;
+
+
 }
 
-.container-banco{
-    cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+.deck-card-link[aria-disabled="true"] {
+  pointer-events: auto;
+  cursor: not-allowed;
 }
-.container-banco:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+.deck-card-link:not([aria-disabled="true"]) {
+  cursor: pointer;
 }
-.container-banco:active {
-  transform: scale(0.97);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+.deck-card:hover,
+.deck-card:focus-within {
+  transform:
+    translateX(calc(var(--i) * var(--spread-shift)))
+    scale(var(--scale-active));
+  z-index: 9999;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.15);
+}
+
+.deck-card:hover ~ .deck-card,
+.deck-card:focus-within ~ .deck-card {
+  transform:
+    translateX(calc(var(--i) * var(--spread-shift) + var(--hover-shift)));
+
+}
+
+.deck-card {
+  width: var(--card-width);
+  min-width: var(--card-width);
+  height: var(--card-height);
+  margin-left: var(--stack-overlap);
+  z-index: calc(1000 + var(--i));
+  transition:
+    transform 220ms ease,
+    filter 220ms ease,
+    z-index 0s linear 0s,
+    box-shadow 220ms ease;
+  border-radius: var(--radius);
+
+}
+.deck-card:first-child { margin-left: 0; }
+.deck-card .card { height: 100%; border-radius: var(--radius); }
+
+.deck:hover .deck-card,
+.deck:focus-within .deck-card {
+  transform: translateX(calc(var(--i) * var(--spread-shift)));
+}
+.deck-card a{
+text-decoration: none!important;
+border: none;
+}
+.deck-card a:hover{
+outline: none;
+background: none;
 }

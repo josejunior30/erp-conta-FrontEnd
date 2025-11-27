@@ -28,3 +28,10 @@ export async function ConectPluggy(
   }
   return token;
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export async function deleteAllPluggyItems(): Promise<number> {
+  const resp = await axios.delete(`${BASE_URL}/api/pluggy/items`);
+  if (resp.status === 204) return 0;
+  return typeof resp.data?.deleted === "number" ? resp.data.deleted : 0;
+}
